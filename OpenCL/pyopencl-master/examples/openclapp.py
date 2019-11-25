@@ -1,0 +1,3 @@
+import pyopencl
+from pyopencl.tools import get_test_platforms_and_devices
+get_test_platforms_and_devices()
