@@ -17,8 +17,8 @@ def cpu():
 
 
 def gpu():
-    ga = cp.array(a)
-    gb = cp.array(b)
+    ga = cp.asarray(a)
+    gb = cp.asarray(b)
     gpu_c = cp.einsum('ij,ij->i', ga, gb)
     gc = cp.asnumpy(gpu_c)
     return gc
