@@ -3,7 +3,7 @@ import cupy as cp
 import numpy as np
 
 n = 10
-num = 13000000
+num = 100000000
 a = np.random.randn(1, num).astype(np.float64)
 b = np.random.randn(1, num).astype(np.float64)
 
