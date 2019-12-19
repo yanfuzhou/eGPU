@@ -2,24 +2,21 @@ import time
 import cupy as cp
 import numpy as np
 
-# test number of times
 n = 10
-# max for single run: math.pow(2, 27) = 134217728
-size = (30, 1000000)
-
-a = np.random.random(size).astype(np.float64)
-b = np.random.random(size).astype(np.float64)
+num = 13000000
+a = np.random.randn(1, num).astype(np.float64)
+b = np.random.randn(1, num).astype(np.float64)
 
 
 def cpu():
-    c = np.einsum('ij,ij->i', a, b)
+    c = np.sin(a) + np.cos(b)
     return c
 
 
 def gpu():
     ga = cp.array(a)
     gb = cp.array(b)
-    gpu_c = cp.einsum('ij,ij->i', ga, gb)
+    gpu_c = cp.sin(ga) + cp.cos(gb)
     gc = cp.asnumpy(gpu_c)
     return gc
 
