@@ -17,6 +17,7 @@ def cpu():
 
 
 def gpu():
+    cp.cuda.Stream.null.synchronize()
     ga = cp.asarray(a)
     gb = cp.asarray(b)
     gpu_c = cp.einsum('ij,ij->i', ga, gb)
