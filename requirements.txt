@@ -1,0 +1,10 @@
+Cython
+wheel
+numba
+pyopencl
+cupy-cuda110
+pycuda
+torch
+tf-nightly-gpu
+matplotlib
+h3
